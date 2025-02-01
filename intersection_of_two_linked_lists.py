@@ -37,14 +37,45 @@ class Solution:
         return intersect_node
 
 
+# NODE = ListNode(8, ListNode(4, ListNode(5, None)))
+
+# assert (
+#     Solution()
+#     .getIntersectionNode(
+#         ListNode(4, ListNode(1, NODE)),
+#         ListNode(5, ListNode(6, ListNode(1, NODE))),
+#     )
+#     .val
+#     == NODE.val
+# )
+
+
+class Solution2:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode | None:
+        pointer_a, pointer_b = headA, headB
+        while pointer_a is not pointer_b:
+            pointer_a = pointer_a.next if pointer_a is not None else headB
+            pointer_b = pointer_b.next if pointer_b is not None else headA
+
+        return pointer_a
+
+
 NODE = ListNode(8, ListNode(4, ListNode(5, None)))
 
 assert (
-    Solution()
+    Solution2()
     .getIntersectionNode(
         ListNode(4, ListNode(1, NODE)),
         ListNode(5, ListNode(6, ListNode(1, NODE))),
     )
     .val
     == NODE.val
+)
+
+assert (
+    Solution2().getIntersectionNode(
+        ListNode(2, ListNode(6, ListNode(4, None))),
+        ListNode(1, ListNode(5, None)),
+    )
+    is None
 )
