@@ -12,6 +12,6 @@ class Solution:
         return sum(len(m) ** i * m[ch] for i, ch in enumerate(columnTitle[::-1]))
 
 
-assert Solution().titleToNumber('A') == 1
-assert Solution().titleToNumber('AB') == 28
+assert Solution().titleToNumber("A") == 1
+assert Solution().titleToNumber("AB") == 28
 assert Solution().titleToNumber("ZY") == 701

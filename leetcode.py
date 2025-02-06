@@ -513,6 +513,7 @@
 #
 # print(Solution().isHappy(2))
 
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x, next_):
@@ -520,7 +521,7 @@ class ListNode:
         self.next = next_
 
     def __repr__(self):
-        return f'ListNode(val={self.val}, next={self.next})'
+        return f"ListNode(val={self.val}, next={self.next})"
 
 
 class Solution:
@@ -536,6 +537,6 @@ class Solution:
         return False
 
 
-test_head1 = ListNode('1', ListNode('2', ListNode('3', None)))
+test_head1 = ListNode("1", ListNode("2", ListNode("3", None)))
 
 print(Solution().hasCycle(test_head1))
